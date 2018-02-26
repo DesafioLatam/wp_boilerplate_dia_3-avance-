@@ -37,7 +37,6 @@ h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-
 .bg-primary {
   background-color: #F05F40 !important;
 }
@@ -540,4 +539,7 @@ footer .copyright {
   width: 0;
   height: 0;
   color: transparent;
+}
+.color-span {
+  color: #f05f40;
 }

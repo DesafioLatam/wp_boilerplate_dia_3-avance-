@@ -1,17 +1,17 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-   <header class="masthead text-center text-white d-flex" style="background: url('<?php echo get_theme_file_uri() ?>/assets/images/home-bg.jpg') no-repeat center center; background-size: cover; ">
+   <header class="masthead text-center text-white d-flex" style="background: url(' <?php the_field('background');?>') no-repeat center center; background-size: cover; ">
      <div class="container my-auto">
        <div class="row">
          <div class="col-lg-10 mx-auto">
            <h1 class="text-uppercase">
-             <strong>Tu marca, es tu verdadera identidad</strong>
+             <strong><?php the_field('titulo');?></strong>
            </h1>
            <hr>
          </div>
          <div class="col-lg-8 mx-auto">
-           <p class="text-faded mb-5">Consultorias en cambios de marcas para empresas</p>
+           <p class="text-faded mb-5"><?php the_field('subtitulo');?></p>
            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Descubre más acá</a>
          </div>
        </div>
@@ -93,17 +93,17 @@
            $portafolios = new WP_Query($args);
            while($portafolios->have_posts()): $portafolios->the_post();
          ?>
-         
+
          <div class="col-lg-4 col-sm-6">
            <a class="portfolio-box" href="<?php the_post_thumbnail_url(); ?>">
-            <?php the_post_thumbnail(); ?>
+            <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded">
                   <?php the_title()?>
                 </div>
                 <div class="project-name">
-                  <?php the_content(); ?>
+                  <?php the_content();?>
                 </div>
               </div>
             </div>
